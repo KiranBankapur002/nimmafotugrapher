@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap" rel="stylesheet');
+
+/* Reset & base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* Remove link underline and default color */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HERO Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0.9) 100%),
+        url('/images/hero.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    animation: zoomBg 20s infinite alternate;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content .title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #dddddd;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background-color: #ff1e00;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 15px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 14px rgba(255, 30, 0, 0.4);
+}
+
+.cta-button:hover {
+    background-color: #e60000;
+    transform: translateY(-2px);
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #111;
+    text-align: center;
+}
+
+.feature-box {
+    flex: 1 1 350px;
+    max-width: 350px;
+    padding: 2rem;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+}
+
+.feature-box h2 {
+    font-size: 2rem;
+    color: #ff1e00;
+    font-weight: 450;
+    margin-top: 1rem;
+}
+
+.feature-box p {
+    color: #ccc;
+    font-size: 1.25rem;
+    font-weight: 200;
+}
+
+/* Header for title image and social icons */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    background: rgba(10, 10, 10, 0.8);
+}
+
+.title-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+    border-radius: 8px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #ff1e00;
+    transform: scale(1.1);
+}
+
+/* Keyframes for background animation */
+@keyframes zoomBg {
+    0% {
+        background-size: 100%;
+    }
+
+    100% {
+        background-size: 110%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-content .title {
+        font-size: 2.8rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .title-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+}
+
+.feature-box.hidden {
+    display: none;
+}
